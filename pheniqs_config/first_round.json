@@ -1,0 +1,36 @@
+{
+    "cellular": [
+        {
+            "algorithm": "pamld",
+            "base": "SPLiT-seq 96",
+            "comment": "BC1: First round cellular barcode",
+            "confidence threshold": 0.99,
+            "noise": 0.05,
+            "transform": {
+                "token": [
+                    "1:86:94"
+                ]
+            }
+        }
+    ],
+    "import": [
+        "splitseq_core.json"
+    ],
+    "molecular": [
+        {
+            "comment": "The UMI is in the first 8 bases of Read 1",
+            "transform": {
+                "token": [
+                    "1::10"
+                ]
+            }
+        }
+    ],
+    "template": {
+        "transform": {
+            "token": [
+                "0::66"
+            ]
+        }
+    }
+}
