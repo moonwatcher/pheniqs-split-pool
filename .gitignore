@@ -1,0 +1,17 @@
+/bin
+/pheniqs
+/_pheniqs
+/local
+/configuration.h
+/version.h
+**/*.o
+/*.sublime-workspace
+/*.sublime-project
+/pheniqs.xcodeproj
+**/.DS_Store
+**/__pycache__
+**/.gcc-flags.json
+**/*.h.gch
+install.sh
+/test/*/result
+/test/*/*/result
