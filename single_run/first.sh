@@ -1,4 +1,4 @@
-pheniqs mux --config ~/code/moonwatcher/pheniqs-split-pool/pheniqs_config/3_round.json --input #!/usr/bin/env bash.cram --input #!/usr/bin/env bash.cram --report #!/usr/bin/env bash_first_report.json --prior #!/usr/bin/env bash_adjusted.json --output #!/usr/bin/env bash_decoded.cram
+#!/usr/bin/env bash
 
 pheniqs mux --config ~/code/moonwatcher/pheniqs-split-pool/pheniqs_config/3_round.json --input SRR6750041.cram --input SRR6750041.cram --report SRR6750041_first_report.json --prior SRR6750041_adjusted.json --output SRR6750041_decoded.cram
 pheniqs mux --config ~/code/moonwatcher/pheniqs-split-pool/pheniqs_config/3_round.json --input SRR6750042.cram --input SRR6750042.cram --report SRR6750042_first_report.json --prior SRR6750042_adjusted.json --output SRR6750042_decoded.cram
