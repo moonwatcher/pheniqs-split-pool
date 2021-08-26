@@ -1,0 +1,21 @@
+#!/usr/bin/env bash
+
+time pheniqs mux --config SRR6750041_adjusted.json --input SRR6750041.cram --input SRR6750041.cram --report SRR6750041_second_report.json --prior SRR6750041_second_adjusted.json --output SRR6750041_adjusted_decoded.cram
+time pheniqs mux --config SRR6750042_adjusted.json --input SRR6750041.cram --input SRR6750042.cram --report SRR6750042_second_report.json --prior SRR6750042_second_adjusted.json --output SRR6750042_adjusted_decoded.cram
+time pheniqs mux --config SRR6750043_adjusted.json --input SRR6750041.cram --input SRR6750043.cram --report SRR6750043_second_report.json --prior SRR6750043_second_adjusted.json --output SRR6750043_adjusted_decoded.cram
+time pheniqs mux --config SRR6750044_adjusted.json --input SRR6750041.cram --input SRR6750044.cram --report SRR6750044_second_report.json --prior SRR6750044_second_adjusted.json --output SRR6750044_adjusted_decoded.cram
+time pheniqs mux --config SRR6750045_adjusted.json --input SRR6750041.cram --input SRR6750045.cram --report SRR6750045_second_report.json --prior SRR6750045_second_adjusted.json --output SRR6750045_adjusted_decoded.cram
+time pheniqs mux --config SRR6750046_adjusted.json --input SRR6750041.cram --input SRR6750046.cram --report SRR6750046_second_report.json --prior SRR6750046_second_adjusted.json --output SRR6750046_adjusted_decoded.cram
+time pheniqs mux --config SRR6750047_adjusted.json --input SRR6750041.cram --input SRR6750047.cram --report SRR6750047_second_report.json --prior SRR6750047_second_adjusted.json --output SRR6750047_adjusted_decoded.cram
+time pheniqs mux --config SRR6750048_adjusted.json --input SRR6750041.cram --input SRR6750048.cram --report SRR6750048_second_report.json --prior SRR6750048_second_adjusted.json --output SRR6750048_adjusted_decoded.cram
+time pheniqs mux --config SRR6750049_adjusted.json --input SRR6750041.cram --input SRR6750049.cram --report SRR6750049_second_report.json --prior SRR6750049_second_adjusted.json --output SRR6750049_adjusted_decoded.cram
+time pheniqs mux --config SRR6750050_adjusted.json --input SRR6750041.cram --input SRR6750050.cram --report SRR6750050_second_report.json --prior SRR6750050_second_adjusted.json --output SRR6750050_adjusted_decoded.cram
+time pheniqs mux --config SRR6750051_adjusted.json --input SRR6750041.cram --input SRR6750051.cram --report SRR6750051_second_report.json --prior SRR6750051_second_adjusted.json --output SRR6750051_adjusted_decoded.cram
+time pheniqs mux --config SRR6750052_adjusted.json --input SRR6750041.cram --input SRR6750052.cram --report SRR6750052_second_report.json --prior SRR6750052_second_adjusted.json --output SRR6750052_adjusted_decoded.cram
+time pheniqs mux --config SRR6750053_adjusted.json --input SRR6750041.cram --input SRR6750053.cram --report SRR6750053_second_report.json --prior SRR6750053_second_adjusted.json --output SRR6750053_adjusted_decoded.cram
+time pheniqs mux --config SRR6750054_adjusted.json --input SRR6750041.cram --input SRR6750054.cram --report SRR6750054_second_report.json --prior SRR6750054_second_adjusted.json --output SRR6750054_adjusted_decoded.cram
+time pheniqs mux --config SRR6750055_adjusted.json --input SRR6750041.cram --input SRR6750055.cram --report SRR6750055_second_report.json --prior SRR6750055_second_adjusted.json --output SRR6750055_adjusted_decoded.cram
+time pheniqs mux --config SRR6750056_adjusted.json --input SRR6750041.cram --input SRR6750056.cram --report SRR6750056_second_report.json --prior SRR6750056_second_adjusted.json --output SRR6750056_adjusted_decoded.cram
+time pheniqs mux --config SRR6750057_adjusted.json --input SRR6750041.cram --input SRR6750057.cram --report SRR6750057_second_report.json --prior SRR6750057_second_adjusted.json --output SRR6750057_adjusted_decoded.cram
+time pheniqs mux --config SRR6750058_adjusted.json --input SRR6750041.cram --input SRR6750058.cram --report SRR6750058_second_report.json --prior SRR6750058_second_adjusted.json --output SRR6750058_adjusted_decoded.cram
+time pheniqs mux --config SRR6750059_adjusted.json --input SRR6750041.cram --input SRR6750059.cram --report SRR6750059_second_report.json --prior SRR6750059_second_adjusted.json --output SRR6750059_adjusted_decoded.cram
