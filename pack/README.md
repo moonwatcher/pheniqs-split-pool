@@ -12,79 +12,60 @@ To facilitate scalable profiling of single cells, we developed Split Pool Ligati
 
 ftp://ftp.sra.ebi.ac.uk/vol1/fastq/SRR675/001/SRR6750041/SRR6750041_1.fastq.gz
 ftp://ftp.sra.ebi.ac.uk/vol1/fastq/SRR675/001/SRR6750041/SRR6750041_2.fastq.gz
-https://www.ebi.ac.uk/ena/browser/api/xml/SRR6750041
 
 ftp://ftp.sra.ebi.ac.uk/vol1/fastq/SRR675/002/SRR6750042/SRR6750042_1.fastq.gz
 ftp://ftp.sra.ebi.ac.uk/vol1/fastq/SRR675/002/SRR6750042/SRR6750042_2.fastq.gz
-https://www.ebi.ac.uk/ena/browser/api/xml/SRR6750042
 
 ftp://ftp.sra.ebi.ac.uk/vol1/fastq/SRR675/003/SRR6750043/SRR6750043_1.fastq.gz
 ftp://ftp.sra.ebi.ac.uk/vol1/fastq/SRR675/003/SRR6750043/SRR6750043_2.fastq.gz
-https://www.ebi.ac.uk/ena/browser/api/xml/SRR6750043
 
 ftp://ftp.sra.ebi.ac.uk/vol1/fastq/SRR675/004/SRR6750044/SRR6750044_1.fastq.gz
 ftp://ftp.sra.ebi.ac.uk/vol1/fastq/SRR675/004/SRR6750044/SRR6750044_2.fastq.gz
-https://www.ebi.ac.uk/ena/browser/api/xml/SRR6750044
 
 ftp://ftp.sra.ebi.ac.uk/vol1/fastq/SRR675/005/SRR6750045/SRR6750045_1.fastq.gz
 ftp://ftp.sra.ebi.ac.uk/vol1/fastq/SRR675/005/SRR6750045/SRR6750045_2.fastq.gz
-https://www.ebi.ac.uk/ena/browser/api/xml/SRR6750045
 
 ftp://ftp.sra.ebi.ac.uk/vol1/fastq/SRR675/006/SRR6750046/SRR6750046_1.fastq.gz
 ftp://ftp.sra.ebi.ac.uk/vol1/fastq/SRR675/006/SRR6750046/SRR6750046_2.fastq.gz
-https://www.ebi.ac.uk/ena/browser/api/xml/SRR6750046
 
 ftp://ftp.sra.ebi.ac.uk/vol1/fastq/SRR675/007/SRR6750047/SRR6750047_1.fastq.gz
 ftp://ftp.sra.ebi.ac.uk/vol1/fastq/SRR675/007/SRR6750047/SRR6750047_2.fastq.gz
-https://www.ebi.ac.uk/ena/browser/api/xml/SRR6750047
 
 ftp://ftp.sra.ebi.ac.uk/vol1/fastq/SRR675/008/SRR6750048/SRR6750048_1.fastq.gz
 ftp://ftp.sra.ebi.ac.uk/vol1/fastq/SRR675/008/SRR6750048/SRR6750048_2.fastq.gz
-https://www.ebi.ac.uk/ena/browser/api/xml/SRR6750048
 
 ftp://ftp.sra.ebi.ac.uk/vol1/fastq/SRR675/009/SRR6750049/SRR6750049_1.fastq.gz
 ftp://ftp.sra.ebi.ac.uk/vol1/fastq/SRR675/009/SRR6750049/SRR6750049_2.fastq.gz
-https://www.ebi.ac.uk/ena/browser/api/xml/SRR6750049
 
 ftp://ftp.sra.ebi.ac.uk/vol1/fastq/SRR675/000/SRR6750050/SRR6750050_1.fastq.gz
 ftp://ftp.sra.ebi.ac.uk/vol1/fastq/SRR675/000/SRR6750050/SRR6750050_2.fastq.gz
-https://www.ebi.ac.uk/ena/browser/api/xml/SRR6750050
 
 ftp://ftp.sra.ebi.ac.uk/vol1/fastq/SRR675/001/SRR6750051/SRR6750051_1.fastq.gz
 ftp://ftp.sra.ebi.ac.uk/vol1/fastq/SRR675/001/SRR6750051/SRR6750051_2.fastq.gz
-https://www.ebi.ac.uk/ena/browser/api/xml/SRR6750051
 
 ftp://ftp.sra.ebi.ac.uk/vol1/fastq/SRR675/002/SRR6750052/SRR6750052_1.fastq.gz
 ftp://ftp.sra.ebi.ac.uk/vol1/fastq/SRR675/002/SRR6750052/SRR6750052_2.fastq.gz
-https://www.ebi.ac.uk/ena/browser/api/xml/SRR6750052
 
 ftp://ftp.sra.ebi.ac.uk/vol1/fastq/SRR675/003/SRR6750053/SRR6750053_1.fastq.gz
 ftp://ftp.sra.ebi.ac.uk/vol1/fastq/SRR675/003/SRR6750053/SRR6750053_2.fastq.gz
-https://www.ebi.ac.uk/ena/browser/api/xml/SRR6750053
 
 ftp://ftp.sra.ebi.ac.uk/vol1/fastq/SRR675/004/SRR6750054/SRR6750054_1.fastq.gz
 ftp://ftp.sra.ebi.ac.uk/vol1/fastq/SRR675/004/SRR6750054/SRR6750054_2.fastq.gz
-https://www.ebi.ac.uk/ena/browser/api/xml/SRR6750054
 
 ftp://ftp.sra.ebi.ac.uk/vol1/fastq/SRR675/005/SRR6750055/SRR6750055_1.fastq.gz
 ftp://ftp.sra.ebi.ac.uk/vol1/fastq/SRR675/005/SRR6750055/SRR6750055_2.fastq.gz
-https://www.ebi.ac.uk/ena/browser/api/xml/SRR6750055
 
 ftp://ftp.sra.ebi.ac.uk/vol1/fastq/SRR675/006/SRR6750056/SRR6750056_1.fastq.gz
 ftp://ftp.sra.ebi.ac.uk/vol1/fastq/SRR675/006/SRR6750056/SRR6750056_2.fastq.gz
-https://www.ebi.ac.uk/ena/browser/api/xml/SRR6750056
 
 ftp://ftp.sra.ebi.ac.uk/vol1/fastq/SRR675/007/SRR6750057/SRR6750057_1.fastq.gz
 ftp://ftp.sra.ebi.ac.uk/vol1/fastq/SRR675/007/SRR6750057/SRR6750057_2.fastq.gz
-https://www.ebi.ac.uk/ena/browser/api/xml/SRR6750057
 
 ftp://ftp.sra.ebi.ac.uk/vol1/fastq/SRR675/008/SRR6750058/SRR6750058_1.fastq.gz
 ftp://ftp.sra.ebi.ac.uk/vol1/fastq/SRR675/008/SRR6750058/SRR6750058_2.fastq.gz
-https://www.ebi.ac.uk/ena/browser/api/xml/SRR6750058
 
 ftp://ftp.sra.ebi.ac.uk/vol1/fastq/SRR675/009/SRR6750059/SRR6750059_1.fastq.gz
 ftp://ftp.sra.ebi.ac.uk/vol1/fastq/SRR675/009/SRR6750059/SRR6750059_2.fastq.gz
-https://www.ebi.ac.uk/ena/browser/api/xml/SRR6750059
 
 each pair of FASTQ file is packaged into an interleaved CRAM file to simplify and accelerate downstream processing.
 
