@@ -43,7 +43,7 @@
     ],
     "molecular": [
         {
-            "comment": "The UMI is in the first 8 bases of Read 1",
+            "comment": "The UMI is in the first 10 bases of the reverse read segment",
             "transform": {
                 "token": [
                     "1::10"
