@@ -5,7 +5,7 @@
             "algorithm": "pamld",
             "base": "SPLiT-seq 96",
             "comment": "BC1: First round cellular barcode",
-            "confidence threshold": 0.99,
+            "confidence threshold": 0.95,
             "noise": 0.05,
             "transform": {
                 "token": [
@@ -17,7 +17,7 @@
             "algorithm": "pamld",
             "base": "SPLiT-seq 96",
             "comment": "BC2: Second round cellular barcode",
-            "confidence threshold": 0.99,
+            "confidence threshold": 0.95,
             "noise": 0.05,
             "transform": {
                 "token": [
@@ -29,7 +29,7 @@
             "algorithm": "pamld",
             "base": "SPLiT-seq 96",
             "comment": "BC3: Third round cellular barcode",
-            "confidence threshold": 0.99,
+            "confidence threshold": 0.95,
             "noise": 0.05,
             "transform": {
                 "token": [
@@ -43,7 +43,7 @@
     ],
     "molecular": [
         {
-            "comment": "The UMI is in the first 8 bases of Read 1",
+            "comment": "The UMI is in the first 10 bases of the reverse read segment",
             "transform": {
                 "token": [
                     "1::10"
@@ -51,11 +51,11 @@
             }
         }
     ],
+    "filter outgoing qc fail": true,
     "template": {
         "transform": {
             "token": [
-                "0::66",
-                "1::"
+                "0::66"
             ]
         }
     }
