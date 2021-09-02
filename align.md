@@ -1,6 +1,7 @@
 ## Original Split-Seq protocol
 
 1. remove any dephased reads: last 6 bases of read did not match the expected sequence.
+The 96 barcodes used by SPLiT-Seq have unique 6bp suffixes. The `filter_by_last_6.json` configuration will check (using MDD with 0 tolerance) for an exact match to one of the 96 barcode suffixes on the last 6 bases of the second read segment. Undetermined is redirected to /dev/null and the output is sent to a CRAM file. We can ignore the classifications downstream but that fulfills this requirement. For SRR6750041, for instance, that resulted in 67.30% of the reads surviving.
 
 2. Filter based on quality score in the UMI region: Discard any read with >1 low-quality base phred <=10.
 
