@@ -35,12 +35,27 @@ STAR \
 --sjdbOverhang 65
 ```
 
+generate the mm10/hg38 combined index
+
+```
+STAR \
+--runThreadN 12 \
+--runMode genomeGenerate \
+--genomeDir /media/terminus/home/lg/split-seq-data/index/mm10_hg38 \
+--genomeFastaFiles /media/terminus/home/lg/split-seq-data/reference/hg38.fa \
+/media/terminus/home/lg/split-seq-data/reference/mm10.fa \
+--sjdbGTFfile /media/terminus/home/lg/split-seq-data/reference/hg38.ncbiRefSeq.gtf \
+/media/terminus/home/lg/split-seq-data/reference/mm10.ncbiRefSeq.gtf \
+--sjdbOverhang 65
+```
+
 align the output to the mouse genome with STAR
 
 ```
 STAR \
 --runMode alignReads \
 --genomeDir /media/terminus/home/lg/split-seq-data/index/mm10 \
+--outFileNamePrefix SRR6750041_ \
 --readFilesType SAM SE \
 --readFilesCommand samtools view \
 --readFilesIn SRR6750041_decoded.cram
