@@ -11,13 +11,13 @@ Reverse read segment is 95 nucleotides long with the following layout:
 6. ```[86:94]``` is BC3
 
 
-| Data       | Experiment | Accession  | Alt ID     |Read count | Pheniqs 95%     | Other       | Description                           |
-| :--------- | :--------- | :--------- | :--------- |:--------  | :-------------  | :---------- | :------------------------------------ |
-| SRR6750041 | SRX3722697 | GSM3017260 |SAMN08567263| 77621181  | 48974827(63.09) |             | MM 100 CNS nuclei                     |
-| SRR6750056 | SRX3722699 | GSM3017262 |SAMN08567261| 218683580 |137683698(62.96) |             | HS/MM same day cells nuclei 3000 UBCs |
-| SRR6750057 | SRX3722700 | GSM3017263 |SAMN08567260| 215597675 |136178474(63.16) |             | HS/MM same day cells nuclei 300 UBCs  |
-| SRR6750058 | SRX3722701 | GSM3017264 |SAMN08567259| 221577898 |125779278(56.76) |             | HS/MM frozen preserved cells nuclei 1000 UBCs |
-| SRR6750059 | SRX3722702 | GSM3017265 |SAMN08567264| 241868411 |135120338(55.86) |             | HS/MM frozen preserved cells nuclei 200 UBCs |
+| Data       | Experiment | Accession  | Alt ID     |Read count | Pheniqs 95%     | Original*        | Description                           |
+| :--------- | :--------- | :--------- | :--------- |:--------  | :-------------  | :--------------- | :------------------------------------ |
+| SRR6750041 | SRX3722697 | GSM3017260 |SAMN08567263| 77621181  | 48974827(63.09) | 51706161(66.61)  | MM 100 CNS nuclei                     |
+| SRR6750056 | SRX3722699 | GSM3017262 |SAMN08567261| 218683580 |137683698(62.96) | 145809694(66.68) | HS/MM same day cells nuclei 3000 UBCs |
+| SRR6750057 | SRX3722700 | GSM3017263 |SAMN08567260| 215597675 |136178474(63.16) | 82387120(38.21%) | HS/MM same day cells nuclei 300 UBCs  |
+| SRR6750058 | SRX3722701 | GSM3017264 |SAMN08567259| 221577898 |125779278(56.76) | 131707053(59.44) | HS/MM frozen preserved cells nuclei 1000 UBCs |
+| SRR6750059 | SRX3722702 | GSM3017265 |SAMN08567264| 241868411 |135120338(55.86) | 75844129(31.36)  | HS/MM frozen preserved cells nuclei 200 UBCs |
 
 Experiment SRX3722697
 Data: SRR6750041
