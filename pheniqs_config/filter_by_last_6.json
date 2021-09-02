@@ -4,7 +4,7 @@
         "algorithm": "mdd",
         "base": "SPLiT-seq 96 6 suffix",
         "comment": "Filter only reads with exact match on the last 6 bases",
-        "distance tolerance": [ 0 ]
+        "distance tolerance": [ 0 ],
         "transform": {
             "token": [
                 "1:88:94"
