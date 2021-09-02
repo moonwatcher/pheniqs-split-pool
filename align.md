@@ -9,7 +9,10 @@ The 96 barcodes used by SPLiT-Seq have unique 6bp suffixes. The `filter_by_last_
 
 4. Align cDNA read segment (Forward) to either a combined mm10_hg19 genome or the mm10 genome using STAR.
 
-5. Map aligned reads in the resulting bam file to exons and genes using TagReadWithGeneExon from the [drop-seq tools](https://github.com/broadinstitute/Drop-seq/releases). Only consider the primary alignments. Reads that mapped to a gene, but no exon, are considered intronic. Reads mapping to no gene were considered intergenic. The [manual for the Drop-seq tools](https://github.com/broadinstitute/Drop-seq/blob/master/doc/Drop-seq_Alignment_Cookbook.pdf) describes *TagReadWithGeneExon*:
+5. Map aligned reads in the resulting bam file to exons and genes using TagReadWithGeneExon from the [drop-seq tools](https://github.com/broadinstitute/Drop-seq/releases). Only consider the primary alignments. Reads that mapped to a gene, but no exon, are considered intronic. Reads mapping to no gene were considered intergenic. TagReadWithGeneExon requires a refFlat file, which requires a .dict file to make.
+
+
+The [manual for the Drop-seq tools](https://github.com/broadinstitute/Drop-seq/blob/master/doc/Drop-seq_Alignment_Cookbook.pdf) describes *TagReadWithGeneExon*:
 
 **TagReadWithGeneExon**
 This is a Drop-seq program that adds a BAM tag “GE” onto reads when the read overlaps the exon of a gene. This tag contains the name of the gene, as reported in the annotations file. You can use either a GTF or a RefFlat annotation file with this program, depending on what annotation data source you find most useful. This is used later when we extract digital gene expression (DGE) from the BAM.
@@ -40,6 +43,21 @@ This functionality has been retained exactly as it was implemented in a newly di
 
 ## STAR source code
 https://github.com/alexdobin/STAR/archive/refs/tags/2.7.9a.tar.gz
+
+## Mouse Human merged index
+
+The Drop-Seq tools manual offers a package with a filtered [mouse](ftp://ftp.ncbi.nlm.nih.gov/geo/series/GSE63nnn/GSE63472/suppl/GSE63472_mm10_reference_metadata.tar.gz), [human](http://www.ncbi.nlm.nih.gov/geo/query/acc.cgi?acc=GSM1629193) and [mixed](ftp://ftp.ncbi.nlm.nih.gov/geo/series/GSE63nnn/GSE63269/suppl/GSE63269_hg19_mm10_transgenes_reference_metadata.tar.gz) reference. It contains a .dict and .refFlat file but mostly a much smaller Fasta file probably with only transgenes. It is possible this was used with TagReadWithGeneExon.
+
+
+```
+STAR \
+--runThreadN 12 \
+--runMode genomeGenerate \
+--genomeDir /media/terminus/home/lg/split-seq-data/index/GSE63269_hg19_mm10 \
+--genomeFastaFiles /media/terminus/home/lg/split-seq-data/reference/GSE63269_hg19_mm10/hg19_mm10_transgenes.fasta \
+--sjdbGTFfile /media/terminus/home/lg/split-seq-data/reference/GSE63269_hg19_mm10/hg19_mm10_transgenes.gtf \
+--sjdbOverhang 65
+```
 
 ## human reference and annotation
 https://hgdownload.soe.ucsc.edu/goldenPath/hg38/bigZips/hg38.fa.gz
