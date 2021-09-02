@@ -1,12 +1,41 @@
 ## Original Split-Seq protocol
 
 1. remove any dephased reads: last 6 bases of read did not match the expected sequence.
+
 2. Filter based on quality score in the UMI region: Discard any read with >1 low-quality base phred <=10.
+
 3. Filter cellular barcodes: Discard reads with more than one mismatch in any of the three 8 nt cell barcodes.
+
 4. Align cDNA read segment (Forward) to either a combined mm10_hg19 genome or the mm10 genome using STAR.
-5. Map aligned reads in the resulting bam file to exons and genes using TagReadWithGeneExon from the drop-seq tools. Only consider the primary alignments. Reads that mapped to a gene, but no exon, are considered intronic. Reads mapping to no gene were considered intergenic.
+
+5. Map aligned reads in the resulting bam file to exons and genes using TagReadWithGeneExon from the [drop-seq tools](https://github.com/broadinstitute/Drop-seq/releases). Only consider the primary alignments. Reads that mapped to a gene, but no exon, are considered intronic. Reads mapping to no gene were considered intergenic. The [manual for the Drop-seq tools](https://github.com/broadinstitute/Drop-seq/blob/master/doc/Drop-seq_Alignment_Cookbook.pdf) describes *TagReadWithGeneExon*:
+
+**TagReadWithGeneExon**
+This is a Drop-seq program that adds a BAM tag “GE” onto reads when the read overlaps the exon of a gene. This tag contains the name of the gene, as reported in the annotations file. You can use either a GTF or a RefFlat annotation file with this program, depending on what annotation data source you find most useful. This is used later when we extract digital gene expression (DGE) from the BAM.
+
+Example:
+```
+TagReadWithGeneExon
+I=merged.bam
+O=star_gene_exon_tagged.bam
+ANNOTATIONS_FILE=${refFlat}
+TAG=GE
+```
+**Updates to TagReadWithGeneExon (V2)**
+We have updated and re-written how reads are tagged with functional annotations in V 2.0 of the dropseq toolkit. In V1, reads received two BAM tags when a read overlapped the exon of a gene. The GE tag specified the gene that overlapped the read, while GS specified which strand the gene was on. This information allows DigitalExpression and other programs to decide if they want to consider reads that are on the same strand as the gene, or run without regard to strand.
+A typical read on that overlaps a gene might have the following tags, indicating the read overlapped an exon of GENE_A, and was on the positive strand:
+
+```
+H53FWBGXX150403:1:11307:13550:9549 0 1 29658 1 60M * 0
+0 CTGCCTTCCCCTCAAGCTCAGGGCCAAGCTGTCCGCCAACCTCGGCTCCTCCGGGCAGCC 7FFFFFFFFFFFFFFFFFFFF.FFFFFFFFFFFAFFFFFFFFFFA.FFFF<FFFFAAAAA XC:Z:TTGTCATGTCAC GE:Z:GENE_A XF:Z:CODING PG:Z:STAR.1 RG:Z:H53FW.1 H:i:4 NM:i:0 XM:Z:GCAAACCT UQ:i:0 AS:i:59​ GS:Z:+
+```
+
+This functionality has been retained exactly as it was implemented in a newly distributed program TagReadWithGeneExonFunction. We’ve done this in case other users need to retain backwards compatibility with any analysis they may have implemented.
+
+
 6. Collapse UMIs of aligned reads that are within 1 nt mismatch of another UMI and belong to the same UBC with Starcode. a single UMI-UBC combination can have several distinct cDNA reads corresponding to different parts of the transcript. Occasionally STAR will map these different reads to different genes. choose the most frequently assigned gene as the mapping for the given UMI-UBC combination.
-7. Generate a matrix of gene counts for each cell (N x K matrix, with N cells and K genes). For each gene, both intronic and exonic UMI counts were used. 
+
+7. Generate a matrix of gene counts for each cell (N x K matrix, with N cells and K genes). For each gene, both intronic and exonic UMI counts were used.
 
 ## STAR source code
 https://github.com/alexdobin/STAR/archive/refs/tags/2.7.9a.tar.gz
