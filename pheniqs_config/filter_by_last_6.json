@@ -1,0 +1,26 @@
+{
+    "PL": "ILLUMINA",
+    "sample": {
+        "algorithm": "mdd",
+        "base": "SPLiT-seq 96 6 suffix",
+        "comment": "Filter only reads with exact match on the last 6 bases",
+        "distance tolerance": [ 0 ]
+        "transform": {
+            "token": [
+                "1:88:94"
+            ]
+        }
+    },
+    "import": [
+        "splitseq_core.json"
+    ],
+    "filter outgoing qc fail": true,
+    "template": {
+        "transform": {
+            "token": [
+                "0::",
+                "1::"
+            ]
+        }
+    }
+}
