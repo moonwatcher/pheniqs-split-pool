@@ -1,0 +1,52 @@
+{
+    "PL": "ILLUMINA",
+    "cellular": [
+        {
+            "algorithm": "pamld",
+            "base": "SPLiT-seq 96",
+            "comment": "BC1: First round cellular barcode",
+            "confidence threshold": 0.99,
+            "noise": 0.05,
+            "transform": {
+                "token": [
+                    "1:86:94"
+                ]
+            }
+        },
+        {
+            "algorithm": "pamld",
+            "base": "SPLiT-seq 96",
+            "comment": "BC2: Second round cellular barcode",
+            "confidence threshold": 0.99,
+            "noise": 0.05,
+            "transform": {
+                "token": [
+                    "1:48:56"
+                ]
+            }
+        },
+        {
+            "algorithm": "pamld",
+            "base": "SPLiT-seq 96",
+            "comment": "BC3: Third round cellular barcode",
+            "confidence threshold": 0.99,
+            "noise": 0.05,
+            "transform": {
+                "token": [
+                    "1:10:18"
+                ]
+            }
+        }
+    ],
+    "import": [
+        "splitseq_core.json"
+    ],
+    "filter outgoing qc fail": true,
+    "template": {
+        "transform": {
+            "token": [
+                "0::66"
+            ]
+        }
+    }
+}
