@@ -27,6 +27,49 @@ sample_names = [
     'SRR6750059'
 ]
 
+# sample_category = [
+#     '100 cns mm',
+#     '150K cns mm',
+#     '150K cns mm',
+#     '150K cns mm',
+#     '150K cns mm',
+#     '150K cns mm',
+#     '150K cns mm',
+#     '150K cns mm',
+#     '150K cns mm',
+#     '150K cns mm',
+#     '150K cns mm',
+#     '150K cns mm',
+#     '150K cns mm',
+#     '150K cns mm',
+#     '150K cns mm',
+#     '3k nuc hs mm',
+#     '300 nuc hs mm',
+#     '1k frozen nuc hs mm',
+#     '200 frozen nuc hs mm'
+# ]
+
+sample_category = [
+    'small',
+    'main',
+    'main',
+    'main',
+    'main',
+    'main',
+    'main',
+    'main',
+    'main',
+    'main',
+    'main',
+    'main',
+    'main',
+    'main',
+    'main',
+    'fresh',
+    'fresh',
+    'frozen',
+    'frozen',
+]
 barcode_id_ex = re.compile('(?P<row>[A-H])(?P<column>[1-9](?:[0-9])?)')
 
 def to_json(ontology):
@@ -46,7 +89,7 @@ def write_to_tsv(path, table):
             file.write('\n'.encode('utf8'))
 
 def overall():
-    def collect_batch(sample, confidence, iteration):
+    def collect_batch(confidence, iteration):
         path = '../full_run_{}/{}_{}_report.json'.format(confidence, sample, iteration)
         if os.path.exists(path):
             with io.open(path, 'rb') as file:
@@ -54,6 +97,7 @@ def overall():
                 row = [
                     confidence,
                     sample,
+                    category,
                     iteration,
                     content['outgoing']['count'],
                     content['outgoing']['pf count'],
@@ -64,24 +108,25 @@ def overall():
     header = [
         'confidence',
         'sample',
+        'category',
         'iteration',
         'count',
         'pf_count',
         'ratio'
     ]
     table = []
-    for sample in sample_names:
-        collect_batch(sample, 95, 'first')
-        collect_batch(sample, 95, 'second')
-        collect_batch(sample, 99, 'first')
-        collect_batch(sample, 99, 'second')
-        collect_batch(sample, 999, 'first')
-        collect_batch(sample, 999, 'second')
+    for category, sample in zip(sample_category, sample_names):
+        collect_batch(95, 'first')
+        collect_batch(95, 'second')
+        collect_batch(99, 'first')
+        collect_batch(99, 'second')
+        collect_batch(999, 'first')
+        collect_batch(999, 'second')
 
     return [ header ] + table
 
 def noise_and_confidence():
-    def collect_batch(sample, confidence, iteration):
+    def collect_batch(confidence, iteration):
         path = '../full_run_{}/{}_{}_report.json'.format(confidence, sample, iteration)
         if os.path.exists(path):
             with io.open(path, 'rb') as file:
@@ -90,8 +135,11 @@ def noise_and_confidence():
                     row = [
                         confidence,
                         sample,
+                        category,
                         iteration,
                         index + 1,
+                        decoder['average classified confidence'],
+                        decoder['average pf classified confidence'],
                         decoder['low conditional confidence count'], # noise
                         decoder['low confidence count'], # low confidence
                     ]
@@ -100,30 +148,33 @@ def noise_and_confidence():
     header = [
         'confidence',
         'sample',
+        'category',
         'iteration',
         'decoder',
+        'mean_confidence',
+        'mean_pf_confidence',
         'noise',
         'low_confidence',
     ]
     table = []
 
-    for sample in sample_names:
-        collect_batch(sample, 95, 'first')
-        collect_batch(sample, 95, 'second')
-        collect_batch(sample, 99, 'first')
-        collect_batch(sample, 99, 'second')
-        collect_batch(sample, 999, 'first')
-        collect_batch(sample, 999, 'second')
+    for category, sample in zip(sample_category, sample_names):
+        collect_batch(95, 'first')
+        collect_batch(95, 'second')
+        collect_batch(99, 'first')
+        collect_batch(99, 'second')
+        collect_batch(999, 'first')
+        collect_batch(999, 'second')
 
-    table.sort(key=lambda i: i[2])
-    table.sort(key=lambda i: i[3])
-    table.sort(key=lambda i: i[1])
-    table.sort(key=lambda i: i[0])
+    # table.sort(key=lambda i: i[2])
+    # table.sort(key=lambda i: i[3])
+    # table.sort(key=lambda i: i[1])
+    # table.sort(key=lambda i: i[0])
 
     return [ header ] + table
 
 def barcode_noise_and_confidence():
-    def collect_batch(sample, confidence, iteration):
+    def collect_batch(confidence, iteration):
         path = '../full_run_{}/{}_{}_report.json'.format(confidence, sample, iteration)
         if os.path.exists(path):
             with io.open(path, 'rb') as file:
@@ -133,9 +184,12 @@ def barcode_noise_and_confidence():
                         row = [
                             confidence,
                             sample,
+                            category,
                             iteration,
                             index + 1,
                             get_barcode_sequence(barcode),
+                            decoder['average classified confidence'],
+                            decoder['average pf classified confidence'],
                             barcode['low conditional confidence count'], # noise
                             barcode['low confidence count'], # low confidence
                         ]
@@ -144,32 +198,35 @@ def barcode_noise_and_confidence():
     header = [
         'confidence',
         'sample',
+        'category',
         'iteration',
         'decoder',
         'barcode',
+        'mean_confidence',
+        'mean_pf_confidence',
         'noise',
         'low_confidence',
     ]
     table = []
 
-    for sample in sample_names:
-        collect_batch(sample, 95, 'first')
-        collect_batch(sample, 95, 'second')
-        collect_batch(sample, 99, 'first')
-        collect_batch(sample, 99, 'second')
-        collect_batch(sample, 999, 'first')
-        collect_batch(sample, 999, 'second')
+    for category, sample in zip(sample_category, sample_names):
+        collect_batch(95, 'first')
+        collect_batch(95, 'second')
+        collect_batch(99, 'first')
+        collect_batch(99, 'second')
+        collect_batch(999, 'first')
+        collect_batch(999, 'second')
 
-    table.sort(key=lambda i: i[4])
-    table.sort(key=lambda i: i[3])
-    table.sort(key=lambda i: i[2])
-    table.sort(key=lambda i: i[1])
-    table.sort(key=lambda i: i[0])
+    # table.sort(key=lambda i: i[4])
+    # table.sort(key=lambda i: i[3])
+    # table.sort(key=lambda i: i[2])
+    # table.sort(key=lambda i: i[1])
+    # table.sort(key=lambda i: i[0])
 
     return [ header ] + table
 
 def priors():
-    def collect_batch(sample, confidence, iteration):
+    def collect_batch(confidence, iteration):
         path = '../full_run_{}/{}_{}_adjusted.json'.format(confidence, sample, iteration)
         if os.path.exists(path):
             with io.open(path, 'rb') as file:
@@ -179,6 +236,7 @@ def priors():
                         row = [
                             confidence,
                             sample,
+                            category,
                             iteration,
                             index + 1,
                             get_barcode_id(barcode_id),
@@ -189,6 +247,7 @@ def priors():
     header = [
         'confidence',
         'sample',
+        'category',
         'iteration',
         'decoder',
         'well',
@@ -197,19 +256,19 @@ def priors():
     ]
     table = []
 
-    for sample in sample_names:
-        collect_batch(sample, 95, 'first')
-        collect_batch(sample, 95, 'second')
-        collect_batch(sample, 99, 'first')
-        collect_batch(sample, 99, 'second')
-        collect_batch(sample, 999, 'first')
-        collect_batch(sample, 999, 'second')
+    for category, sample in zip(sample_category, sample_names):
+        collect_batch(95, 'first')
+        collect_batch(95, 'second')
+        collect_batch(99, 'first')
+        collect_batch(99, 'second')
+        collect_batch(999, 'first')
+        collect_batch(999, 'second')
 
-    table.sort(key=lambda i: i[4])
-    table.sort(key=lambda i: i[3])
-    table.sort(key=lambda i: i[2])
-    table.sort(key=lambda i: i[1])
-    table.sort(key=lambda i: i[0])
+    # table.sort(key=lambda i: i[4])
+    # table.sort(key=lambda i: i[3])
+    # table.sort(key=lambda i: i[2])
+    # table.sort(key=lambda i: i[1])
+    # table.sort(key=lambda i: i[0])
 
     return [ header ] + table
 
