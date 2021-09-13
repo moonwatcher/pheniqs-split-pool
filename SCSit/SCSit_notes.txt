@@ -1,0 +1,35 @@
+This paper by X describes Y. Something more detailed as an overview of what you think the paper says. General statement about the quality of the work. Statement about major / minor concerns. Specific issues that need to be addressed are described below.
+
+Major comments
+
+English
+Define variables
+etc ...
+Minor comments
+
+typos etc.
+
+
+This paper by Luan et al. describes SCSit, a high-efficiency preprocessing tool for single-cell sequencing data from SPLiT-seq. The tool claims to improve on the original method by correctly classifying more reads, predominantly by accounting for insertions and deletions in the inter barcode regions of the forward read.
+
+Comments
+
+1. The english throughout the manuscript is very difficult to understand. I recommend the authors seek assistance from a native english speaker.
+line 105: "dissection" instead of "identification".
+
+
+2. It would be informative for the reader if the authors more clearly state in the abstract that SCSit correctly classifies more reads by correctly detecting insertions and deletions.
+
+3. The introduction provides an overview of a variety of singe-cell experimental designs, singling out SPLiT-seq as a low cost alternative. It claims that the motivation for the paper is that SPLiT-seq lacks an efficient tool to decode the 4 barcodes, but does not provide an overview of existing barcode decoding tools and explain why they are unsuitable.
+
+4. The authors claim "Compared with the original method used in SPLiT-seq, the consistency of identified reads from SCSit increases to 97%,". It is not clear what the "consistency of reads" is and therefore what has increased to 97%. Also, increased to 97% from what?
+
+5. The authors write: "and mapped reads are twice than the original." It is not clear what that means. Has SCSit been able to classify the barcodes of twice the amount of reads as the original method did? if so it should be explicitly stated. It would also be useful to show examples and statistics that show how it was able to classify the additional reads.
+
+6. The authors write: "The existing methods simply based on ordinary alignment tools, such as BLAST or BWA, are time-consuming and fallibility for simultaneous determination of all three barcodes in different regions of each sequence.". It is not clear what exactly is the original method used to classify the barcodes, BLAST and BWA are alignment tools, not barcode classifiers.
+
+7. Through the manuscript, authors fail to define terms before they are used.
+[104, 109] "BC barcode"
+[121] W1, Ms, W23, Me
+
+8. In line 154 the authors define a function for "quad to decimal conversion". The function described seems to be a hash function from the {A,T,C,G}^n space to N (integer space). They clearly meant "Integer" and not "Decimal", a decimal number is a floating point fraction. Is the function used to accelerate matches against the k-mers? It would be good to explain how it achieves that. How are substitutions detected? The distance function in line 165 gives downstream mismatches more weight. It is not intuitively apparent why this is a good thing. perhaps it would be good to explain it. It is also not apparently clear when is the distance function used, the hashing only allows for exact matches to be found.
