@@ -8,8 +8,9 @@ Reverse read segment is 95 nucleotides long with the following layout:
 3. ```[18:48]``` is ```GTGGCCGATGTTTCGCATCGGCGTACGACT```. Referred to in the paper as *Round 3 blocking strand* or *Oligonucleotie BC_0066*.
 4. ```[48:56]``` is BC2
 5. ```[56:86]``` is ```ATCCACGTGCTTGAGAGGCCAGAGCATTCG```. Referred to in the paper as *Round 2 blocking strand* or *Oligonucleotie BC_0216*.
-6. ```[86:94]``` is BC3
+6. ```[86:94]``` is BC1
 
+```UUUUUUUUUU33333333GTGGCCGATGTTTCGCATCGGCGTACGACT22222222ATCCACGTGCTTGAGAGGCCAGAGCATTCG11111111```
 
 | Data       | Experiment | Accession  | Alt ID     |Read count | Pheniqs 95%     | Original*        | Description                           |
 | :--------- | :--------- | :--------- | :--------- |:--------  | :-------------  | :--------------- | :------------------------------------ |
